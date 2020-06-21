@@ -1393,7 +1393,7 @@ pre code {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #378f79;
+  background: #d74936;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2212,6 +2212,13 @@ pre code {
   max-width: 100%;
   width: 180px;
 }
+.post-copyright {
+  background: var(--card-bg-color);
+  border-left: 3px solid #ff2a2a;
+  list-style: none;
+  margin: 2em 0 0;
+  padding: 0.5em 1em;
+}
 .category-all-page .category-all-title {
   text-align: center;
 }
@@ -2775,4 +2782,11 @@ ul.breadcrumb li + li:last-child {
 .links-of-author-item .far,
 .links-of-author-item .fas {
   margin-right: 2px;
+}
+body {
+  background: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 }
