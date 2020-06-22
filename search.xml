@@ -18,6 +18,84 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo-theme-NexT 主题优化总结</title>
+    <url>/post/ad21ae23.html</url>
+    <content><![CDATA[<hr>
+<p><strong>声明</strong>：本文大量内容来源于网络，由作者综合整理，如涉及侵权，请联系作者更改。正文内容中提到的主题NexT版本为8.0.0-rc.3（在主题文件夹<code>package.json</code>中可查看）</p>
+<hr>
+<p><img src="http://ww1.sinaimg.cn/large/c2c8e24dly1gg1f663w1sj20xc0dw3z2.jpg" alt="0e1132e2ce2adf445889c83a80d89ded.jpg"></p>
+<a id="more"></a>
+
+<h2 id="使用手册（中文）"><a href="#使用手册（中文）" class="headerlink" title="使用手册（中文）"></a>使用手册（中文）</h2><blockquote>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
+</blockquote>
+<h2 id="如何让首页文章部分显示"><a href="#如何让首页文章部分显示" class="headerlink" title="如何让首页文章部分显示"></a>如何让首页文章部分显示</h2><p>next主题默认的是将你的文章全篇显示在自己的首页上，这就会导致一个问题，首页各个文章太长了不利于翻阅，那如何部分显示自己的文章呢？很简单，只要在个人的文章Markdown 中在想要显示的文章部分下面加上代码<code>&lt;!--more--&gt;</code>，即可只在首页显示所需的文章部分。</p>
+<h2 id="添加阅读全文"><a href="#添加阅读全文" class="headerlink" title="添加阅读全文"></a>添加<code>阅读全文</code></h2><p>网上查了好多资料始终都没得到解决如何去设置“阅读全文”。最后查了最细的next7.6文档才发现还要下载插件，然后在主题配置文件<code>_config.yml</code>配置下就好了。<br>一，在博客目录下执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-excerpt --save</span><br></pre></td></tr></table></figure>
+
+<p>二，在站点配置文件<code>_config.yml</code>添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt:</span><br><span class="line">  depth: 10</span><br><span class="line">  excerpt_excludes: []</span><br><span class="line">  more_excludes: []</span><br><span class="line">  hideWholePostExcerpts: true</span><br></pre></td></tr></table></figure>
+
+<p>next7.6最新文档<a href="https://github.com/chekun/hexo-excerpt" target="_blank" rel="noopener">添加链接描述</a></p>
+<p>以上方法不行的话 在博客配置文件 <code>_config.yml</code>里 <code>excerpt_description</code> 改为<code>true</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
+
+<h2 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h2><p>如你所知，NexT主题自带的归档页面叫做（archives），从你给出的页面链接看的话，应该不是NexT主题自带的归档页面，应该是这个作者自动生成的一个页面，然后将这个页面放到了顶部的菜单栏，内容应和版式该是作者自己整理的。</p>
+<p>大致做法：</p>
+<p>利用<code>hexo new page &quot;xxx&quot;</code>生成一个新页面，此时<code>Hexo</code>会自动在<code>~\hexo\source\</code>目录下生成一个<code>xxx</code>目录，进入这个目录，你会发现<code>index.md</code>这个文件，这个文件可以使用<code>Markdown</code>语法或<code>html</code>标签来进行编辑，按照你想要的效果去编辑这个文件，最终效果会展示在你新建的这个页面上。</p>
+<p>接着再把这个页面放到顶部的菜单栏，这个只用修改<code>主题配置文件</code>内的<code>menu</code>配置即可。</p>
+<h2 id="修改站点icon"><a href="#修改站点icon" class="headerlink" title="修改站点icon"></a>修改站点icon</h2><p>当套用完next主题后，个人博客的站点图标会自动为next的logo，作为博主当然不能忍这个logo啦，那怎么修改呢？</p>
+<p>我们打开next的主题配置文件会发现有这样的设定：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br></pre></td></tr></table></figure>
+
+<p>这就可以很清晰地发现去哪里修改了，只要在对应的路径上把原有的图片文件给替换成我们需要的文件就行了。这里给大家提供一个网站用于生成所需的icon同尺寸图像：<a href="http://www.favicon-generator.org/" target="_blank" rel="noopener">favicon-generator</a></p>
+<h2 id="添加字数统计和阅读时长"><a href="#添加字数统计和阅读时长" class="headerlink" title="添加字数统计和阅读时长"></a>添加字数统计和阅读时长</h2><p>转至于<code>https://www.himmy.cn/2019/07/06/hexo博客next主题下添加字数统计和阅读时长/</code></p>
+<p>安装<code>hexo-symbols-count-time</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
+
+<p>在站点配置文件添加如下配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true                # 文章字数统计</span><br><span class="line">  time: true                   # 文章阅读时长</span><br><span class="line">  total_symbols: true          # 站点总字数统计</span><br><span class="line">  total_time: true             # 站点总阅读时长</span><br><span class="line">  exclude_codeblock: false     # 排除代码字数统计</span><br></pre></td></tr></table></figure>
+
+<p>在NexT主题配置文件添加如下配置（NexT主题已支持该插件，有的话无需再添加，否则出错）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4                   # Average Word Length</span><br><span class="line">  wpm: 275                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
+
+<p>效果如下：</p>
+<p>站点统计</p>
+<p><img src="https://img-blog.csdnimg.cn/20190625234737709.png" alt="img"></p>
+<p>文章统计</p>
+<p><img src="https://img-blog.csdnimg.cn/20190625234838119.png" alt="img"></p>
+<p>参考<a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">theme-next/hexo-symbols-count-time</a></p>
+<h2 id="添加背景图片"><a href="#添加背景图片" class="headerlink" title="添加背景图片"></a>添加背景图片</h2><p>1、在根目录source（此目录下有<code>_posts</code>文件夹）下新建 <code>_data/styles.styl</code>，将下列代码添加进去</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">  background-image:url(&#x2F;images&#x2F;background.jpg);</span><br><span class="line">  background-position:center;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  background-repeat:no-repeat;</span><br><span class="line">  background-attachment: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2、修改主题配置文件<code>_config.yml</code>解锁style</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory &#96;source&#x2F;_data&#96; and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source&#x2F;_data&#x2F;head.njk</span><br><span class="line">  #header: source&#x2F;_data&#x2F;header.njk</span><br><span class="line">  #sidebar: source&#x2F;_data&#x2F;sidebar.njk</span><br><span class="line">  #postMeta: source&#x2F;_data&#x2F;post-meta.njk</span><br><span class="line">  #postBodyEnd: source&#x2F;_data&#x2F;post-body-end.njk</span><br><span class="line">  #footer: source&#x2F;_data&#x2F;footer.njk</span><br><span class="line">  #bodyEnd: source&#x2F;_data&#x2F;body-end.njk</span><br><span class="line">  #variable: source&#x2F;_data&#x2F;variables.styl</span><br><span class="line">  #mixin: source&#x2F;_data&#x2F;mixins.styl</span><br><span class="line">  style: source&#x2F;_data&#x2F;styles.styl</span><br></pre></td></tr></table></figure>
+
+<p>3、将自己喜欢的图片命名为<code>background.jpg</code>放在主题目录中的<code>/source/images</code>下。</p>
+<h2 id="修改文章间分割线"><a href="#修改文章间分割线" class="headerlink" title="修改文章间分割线"></a>修改文章间分割线</h2><p>打开 <code>themes/next/source/css/_common/components/post/post-eof.styl</code> ,修改：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-eof &#123;</span><br><span class="line">  background: $grey-light;</span><br><span class="line">  height: 1px;</span><br><span class="line">  margin: $post-eof-margin-top auto $post-eof-margin-bottom;</span><br><span class="line">  width: 100%;&#x2F;&#x2F; 修改此处数据，100%为最长</span><br><span class="line"></span><br><span class="line">  .post-block:last-of-type &amp; &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="文章顶部显示更新时间"><a href="#文章顶部显示更新时间" class="headerlink" title="文章顶部显示更新时间"></a>文章顶部显示更新时间</h2><p>打开主题配置文件 <code>_config.yml</code> ,搜索关键字 <code>updated_at</code> 设置为 <code>true</code> ：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post meta display settings</span><br><span class="line">post_meta:</span><br><span class="line">  item_text: true</span><br><span class="line">  created_at: true</span><br><span class="line">  updated_at: ture</span><br><span class="line">  categories: true</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加-README-md-文件"><a href="#添加-README-md-文件" class="headerlink" title="添加 README.md 文件"></a>添加 README.md 文件</h3><p>每个项目下一般都有一个 <code>README.md</code> 文件，但是使用 <code>hexo</code> 部署到仓库后，项目下是没有 README.md 文件的。</p>
+<p>在 <code>Hexo</code> 目录下的 <code>source</code> 根目录下添加一个 <code>README.m</code>d 文件，修改站点配置文件 <code>_config.yml</code> ，将 <code>skip_render</code> 参数的值设置为：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Directory</span><br><span class="line">...</span><br><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
+
+<p>保存退出即可。再次使用 <code>hexo d</code> 命令部署博客的时候就不会在渲染 <code>README.md</code> 这个文件了。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>custom Pages  <a href="https://theme-next.js.org/docs/theme-settings/custom-pages" target="_blank" rel="noopener">https://theme-next.js.org/docs/theme-settings/custom-pages</a></p>
+<p>NexT主题美化之自定义文章底部版权声明<a href="https://www.jianshu.com/p/93170e7413e9" target="_blank" rel="noopener">https://www.jianshu.com/p/93170e7413e9</a></p>
+]]></content>
+      <categories>
+        <category>Blog</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>theme</tag>
+        <tag>NexT</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>辅料的关键质量属性研究与控制</title>
     <url>/post/cddda33c.html</url>
     <content><![CDATA[<p><strong>转载</strong> 梅希 <a href="javascript:void(0);">药事纵横</a> <em>2018-05-22</em></p>
@@ -107,84 +185,6 @@
       </categories>
       <tags>
         <tag>制剂</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-theme-NexT 主题优化总结</title>
-    <url>/post/ad21ae23.html</url>
-    <content><![CDATA[<hr>
-<p><strong>声明</strong>：本文大量内容来源于网络，由作者综合整理，如涉及侵权，请联系作者更改。正文内容中提到的主题NexT版本为8.0.0-rc.3（在主题文件夹<code>package.json</code>中可查看）</p>
-<hr>
-<p><img src="http://ww1.sinaimg.cn/large/c2c8e24dly1gg1f663w1sj20xc0dw3z2.jpg" alt="0e1132e2ce2adf445889c83a80d89ded.jpg"></p>
-<a id="more"></a>
-
-<h2 id="使用手册（中文）"><a href="#使用手册（中文）" class="headerlink" title="使用手册（中文）"></a>使用手册（中文）</h2><blockquote>
-<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">https://hexo.io/zh-cn/</a></p>
-</blockquote>
-<h2 id="如何让首页文章部分显示"><a href="#如何让首页文章部分显示" class="headerlink" title="如何让首页文章部分显示"></a>如何让首页文章部分显示</h2><p>next主题默认的是将你的文章全篇显示在自己的首页上，这就会导致一个问题，首页各个文章太长了不利于翻阅，那如何部分显示自己的文章呢？很简单，只要在个人的文章Markdown 中在想要显示的文章部分下面加上代码<code>&lt;!--more--&gt;</code>，即可只在首页显示所需的文章部分。</p>
-<h2 id="添加阅读全文"><a href="#添加阅读全文" class="headerlink" title="添加阅读全文"></a>添加<code>阅读全文</code></h2><p>网上查了好多资料始终都没得到解决如何去设置“阅读全文”。最后查了最细的next7.6文档才发现还要下载插件，然后在主题配置文件<code>_config.yml</code>配置下就好了。<br>一，在博客目录下执行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-excerpt --save</span><br></pre></td></tr></table></figure>
-
-<p>二，在站点配置文件<code>_config.yml</code>添加</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">excerpt:</span><br><span class="line">  depth: 10</span><br><span class="line">  excerpt_excludes: []</span><br><span class="line">  more_excludes: []</span><br><span class="line">  hideWholePostExcerpts: true</span><br></pre></td></tr></table></figure>
-
-<p>next7.6最新文档<a href="https://github.com/chekun/hexo-excerpt" target="_blank" rel="noopener">添加链接描述</a></p>
-<p>以上方法不行的话 在博客配置文件 <code>_config.yml</code>里 <code>excerpt_description</code> 改为<code>true</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Automatically excerpt description in homepage as preamble text.</span><br><span class="line">excerpt_description: true</span><br></pre></td></tr></table></figure>
-
-<h2 id="归档"><a href="#归档" class="headerlink" title="归档"></a>归档</h2><p>如你所知，NexT主题自带的归档页面叫做（archives），从你给出的页面链接看的话，应该不是NexT主题自带的归档页面，应该是这个作者自动生成的一个页面，然后将这个页面放到了顶部的菜单栏，内容应和版式该是作者自己整理的。</p>
-<p>大致做法：</p>
-<p>利用<code>hexo new page &quot;xxx&quot;</code>生成一个新页面，此时<code>Hexo</code>会自动在<code>~\hexo\source\</code>目录下生成一个<code>xxx</code>目录，进入这个目录，你会发现<code>index.md</code>这个文件，这个文件可以使用<code>Markdown</code>语法或<code>html</code>标签来进行编辑，按照你想要的效果去编辑这个文件，最终效果会展示在你新建的这个页面上。</p>
-<p>接着再把这个页面放到顶部的菜单栏，这个只用修改<code>主题配置文件</code>内的<code>menu</code>配置即可。</p>
-<h2 id="修改站点icon"><a href="#修改站点icon" class="headerlink" title="修改站点icon"></a>修改站点icon</h2><p>当套用完next主题后，个人博客的站点图标会自动为next的logo，作为博主当然不能忍这个logo啦，那怎么修改呢？</p>
-<p>我们打开next的主题配置文件会发现有这样的设定：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: &#x2F;images&#x2F;favicon-16x16-next.png</span><br><span class="line">  medium: &#x2F;images&#x2F;favicon-32x32-next.png</span><br><span class="line">  apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br></pre></td></tr></table></figure>
-
-<p>这就可以很清晰地发现去哪里修改了，只要在对应的路径上把原有的图片文件给替换成我们需要的文件就行了。这里给大家提供一个网站用于生成所需的icon同尺寸图像：<a href="http://www.favicon-generator.org/" target="_blank" rel="noopener">favicon-generator</a></p>
-<h2 id="添加字数统计和阅读时长"><a href="#添加字数统计和阅读时长" class="headerlink" title="添加字数统计和阅读时长"></a>添加字数统计和阅读时长</h2><p>转至于<code>https://www.himmy.cn/2019/07/06/hexo博客next主题下添加字数统计和阅读时长/</code></p>
-<p>安装<code>hexo-symbols-count-time</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-symbols-count-time --save</span><br></pre></td></tr></table></figure>
-
-<p>在站点配置文件添加如下配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">  symbols: true                # 文章字数统计</span><br><span class="line">  time: true                   # 文章阅读时长</span><br><span class="line">  total_symbols: true          # 站点总字数统计</span><br><span class="line">  total_time: true             # 站点总阅读时长</span><br><span class="line">  exclude_codeblock: false     # 排除代码字数统计</span><br></pre></td></tr></table></figure>
-
-<p>在NexT主题配置文件添加如下配置（NexT主题已支持该插件，有的话无需再添加，否则出错）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post wordcount display settings</span><br><span class="line"># Dependencies: https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-symbols-count-time</span><br><span class="line">symbols_count_time:</span><br><span class="line">  separated_meta: true     # 是否另起一行（true的话不和发表时间等同一行）</span><br><span class="line">  item_text_post: true     # 首页文章统计数量前是否显示文字描述（本文字数、阅读时长）</span><br><span class="line">  item_text_total: false   # 页面底部统计数量前是否显示文字描述（站点总字数、站点阅读时长）</span><br><span class="line">  awl: 4                   # Average Word Length</span><br><span class="line">  wpm: 275                 # Words Per Minute（每分钟阅读词数）</span><br><span class="line">  suffix: mins.</span><br></pre></td></tr></table></figure>
-
-<p>效果如下：</p>
-<p>站点统计</p>
-<p><img src="https://img-blog.csdnimg.cn/20190625234737709.png" alt="img"></p>
-<p>文章统计</p>
-<p><img src="https://img-blog.csdnimg.cn/20190625234838119.png" alt="img"></p>
-<p>参考<a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">theme-next/hexo-symbols-count-time</a></p>
-<h2 id="添加背景图片"><a href="#添加背景图片" class="headerlink" title="添加背景图片"></a>添加背景图片</h2><p>1、在根目录source（此目录下有<code>_posts</code>文件夹）下新建 <code>_data/styles.styl</code>，将下列代码添加进去</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">  background-image:url(&#x2F;images&#x2F;background.jpg);</span><br><span class="line">  background-position:center;</span><br><span class="line">  background-size: cover;</span><br><span class="line">  background-repeat:no-repeat;</span><br><span class="line">  background-attachment: fixed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>2、修改主题配置文件<code>_config.yml</code>解锁style</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Define custom file paths.</span><br><span class="line"># Create your custom files in site directory &#96;source&#x2F;_data&#96; and uncomment needed files below.</span><br><span class="line">custom_file_path:</span><br><span class="line">  #head: source&#x2F;_data&#x2F;head.njk</span><br><span class="line">  #header: source&#x2F;_data&#x2F;header.njk</span><br><span class="line">  #sidebar: source&#x2F;_data&#x2F;sidebar.njk</span><br><span class="line">  #postMeta: source&#x2F;_data&#x2F;post-meta.njk</span><br><span class="line">  #postBodyEnd: source&#x2F;_data&#x2F;post-body-end.njk</span><br><span class="line">  #footer: source&#x2F;_data&#x2F;footer.njk</span><br><span class="line">  #bodyEnd: source&#x2F;_data&#x2F;body-end.njk</span><br><span class="line">  #variable: source&#x2F;_data&#x2F;variables.styl</span><br><span class="line">  #mixin: source&#x2F;_data&#x2F;mixins.styl</span><br><span class="line">  style: source&#x2F;_data&#x2F;styles.styl</span><br></pre></td></tr></table></figure>
-
-<p>3、将自己喜欢的图片命名为<code>background.jpg</code>放在主题目录中的<code>/source/images</code>下。</p>
-<h2 id="修改文章间分割线"><a href="#修改文章间分割线" class="headerlink" title="修改文章间分割线"></a>修改文章间分割线</h2><p>打开 <code>themes/next/source/css/_common/components/post/post-eof.styl</code> ,修改：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.post-eof &#123;</span><br><span class="line">  background: $grey-light;</span><br><span class="line">  height: 1px;</span><br><span class="line">  margin: $post-eof-margin-top auto $post-eof-margin-bottom;</span><br><span class="line">  width: 100%;&#x2F;&#x2F; 修改此处数据，100%为最长</span><br><span class="line"></span><br><span class="line">  .post-block:last-of-type &amp; &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="文章顶部显示更新时间"><a href="#文章顶部显示更新时间" class="headerlink" title="文章顶部显示更新时间"></a>文章顶部显示更新时间</h2><p>打开主题配置文件 <code>_config.yml</code> ,搜索关键字 <code>updated_at</code> 设置为 <code>true</code> ：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Post meta display settings</span><br><span class="line">post_meta:</span><br><span class="line">  item_text: true</span><br><span class="line">  created_at: true</span><br><span class="line">  updated_at: ture</span><br><span class="line">  categories: true</span><br></pre></td></tr></table></figure>
-
-<h3 id="添加-README-md-文件"><a href="#添加-README-md-文件" class="headerlink" title="添加 README.md 文件"></a>添加 README.md 文件</h3><p>每个项目下一般都有一个 <code>README.md</code> 文件，但是使用 <code>hexo</code> 部署到仓库后，项目下是没有 README.md 文件的。</p>
-<p>在 <code>Hexo</code> 目录下的 <code>source</code> 根目录下添加一个 <code>README.m</code>d 文件，修改站点配置文件 <code>_config.yml</code> ，将 <code>skip_render</code> 参数的值设置为：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Directory</span><br><span class="line">...</span><br><span class="line">skip_render: README.md</span><br></pre></td></tr></table></figure>
-
-<p>保存退出即可。再次使用 <code>hexo d</code> 命令部署博客的时候就不会在渲染 <code>README.md</code> 这个文件了。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>custom Pages  <a href="https://theme-next.js.org/docs/theme-settings/custom-pages" target="_blank" rel="noopener">https://theme-next.js.org/docs/theme-settings/custom-pages</a></p>
-<p>NexT主题美化之自定义文章底部版权声明<a href="https://www.jianshu.com/p/93170e7413e9" target="_blank" rel="noopener">https://www.jianshu.com/p/93170e7413e9</a></p>
-]]></content>
-      <categories>
-        <category>Blog</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>theme</tag>
-        <tag>NexT</tag>
       </tags>
   </entry>
 </search>
