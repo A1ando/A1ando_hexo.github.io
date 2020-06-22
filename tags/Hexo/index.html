@@ -256,12 +256,25 @@
       <span class="links-of-author-item">
         <a href="mailto:741944551@qq.com" title="E-Mail → mailto:741944551@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1352778" title="Bili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1352778" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bili</a>
+      </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/ch-ZN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
   </div>
 
 
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/" title="https:&#x2F;&#x2F;www.v2ex.com&#x2F;" rel="noopener" target="_blank">V2EX</a>
+        </li>
+    </ul>
+  </div>
 
       </div>
     </div>
@@ -313,7 +326,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/06/22/Hexo-theme-NexT%20%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96%E6%80%BB%E7%BB%93/" itemprop="url">
+          <a class="post-title-link" href="/post/ad21ae23.html" itemprop="url">
             <span itemprop="name">Hexo-theme-NexT 主题优化总结</span>
           </a>
       </div>
@@ -333,7 +346,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/06/21/Hexo-GitHub%E6%90%AD%E5%BB%BA%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/" itemprop="url">
+          <a class="post-title-link" href="/post/1438a165.html" itemprop="url">
             <span itemprop="name">Hexo + GitHub搭建静态博客</span>
           </a>
       </div>
@@ -406,6 +419,27 @@
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
   </div>
+
+	<!-- 网站运行时间的设置 -->
+	<span id="timeDate">载入天数...</span>
+	<span id="times">载入时分秒...</span> Life sucks but we still gotta move on
+	<script>
+		var now = new Date();
+		function createtime() {
+			var grt= new Date("20/06/2020 17:00:00");//此处修改你的建站时间或者网站上线时间
+			now.setTime(now.getTime()+250);
+			days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+			hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+			if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+			mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+			seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+			snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+			document.getElementById("timeDate").innerHTML = "本站运行 "+dnum+" 天 ";
+			document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+	}
+	setInterval("createtime()",250);
+	</script>
+
 
         
 
