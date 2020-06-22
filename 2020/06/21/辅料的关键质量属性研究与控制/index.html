@@ -14,10 +14,12 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"a1ando.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"a1ando.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="转载 梅希 药事纵横 2018-05-22 药用辅料是指生产药品时处方中使用到的赋形剂和添加剂，是除了活性成分（原料药，API）或前体药物以外，在安全性方面已进行了合理评估的物质。辅料除了赋形、充当载体、提高稳定性外，还具有增溶、助溶、调节药物释放等重要功能，是可能会影响到制剂的质量、安全性和有效性的重要成分。在制剂制备过程中，药用辅料选用是否得当会影响制剂的安全性、有效性、稳定性、经济性和顺应性">
@@ -40,7 +42,7 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c2c8e24dly1gg03zknhsjj20hd08aglz.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/c2c8e24dly1gg03zos6cvj20pn0jmjsl.jpg">
 <meta property="article:published_time" content="2020-06-21T10:30:12.000Z">
-<meta property="article:modified_time" content="2020-06-21T12:47:01.551Z">
+<meta property="article:modified_time" content="2020-06-22T10:58:22.000Z">
 <meta property="article:author" content="A1ando">
 <meta property="article:tag" content="制剂">
 <meta name="twitter:card" content="summary">
@@ -152,7 +154,7 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">0</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
@@ -236,6 +238,12 @@
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
@@ -259,6 +267,10 @@
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -267,10 +279,7 @@
       </header>
 
       
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  <div class="reading-progress-bar"></div>
 
 
       <div class="main-inner">
@@ -305,9 +314,24 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-21 18:30:12 / 修改时间：20:47:01" itemprop="dateCreated datePublished" datetime="2020-06-21T18:30:12+08:00">2020-06-21</time>
+              <time title="创建时间：2020-06-21 18:30:12" itemprop="dateCreated datePublished" datetime="2020-06-21T18:30:12+08:00">2020-06-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-22 18:58:22" itemprop="dateModified" datetime="2020-06-22T18:58:22+08:00">2020-06-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B6%E5%89%82/" itemprop="url" rel="index"><span itemprop="name">制剂</span></a>
+                </span>
             </span>
 
           <br>
@@ -335,7 +359,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>转载 梅希 <a href="javascript:void(0);">药事纵横</a> <em>2018-05-22</em></p>
+        <p><strong>转载</strong> 梅希 <a href="javascript:void(0);">药事纵横</a> <em>2018-05-22</em></p>
 <p>药用辅料是指生产药品时处方中使用到的赋形剂和添加剂，是除了活性成分（原料药，API）或前体药物以外，在安全性方面已进行了合理评估的物质。辅料除了赋形、充当载体、提高稳定性外，还具有增溶、助溶、调节药物释放等重要功能，是可能会影响到制剂的质量、安全性和有效性的重要成分。在制剂制备过程中，药用辅料选用是否得当会影响制剂的安全性、有效性、稳定性、经济性和顺应性。</p>
 <p>本文通过围绕辅料的关键质量属性，通过几个案例展示了辅料功能和性质对制剂研发的影响，并总结了辅料质量属性的分析技术，旨在提示广大研发人员重视辅料的质量研究与控制。</p>
 <a id="more"></a>
@@ -415,10 +439,7 @@
 <p>把辅料的CQAs与制剂成品的QTPP联系起来，只要制定了辅料控制策略就能够保证产品符合要求，而为了完成这种“过程中的控制策略”，首先需要结合国内外药典标准对辅料的基本检测指标进行分析；其次需要结合辅料的厂家报告和自检结果分析存在的差异；第三需要结合制剂处方工艺研究寻找辅料的CQAs并制定适用于特定药物的内控标准。</p>
 <p>辅料虽然无药理活性，但却是制剂的重要组成部分，缺少辅料制剂的性能是无法实现的。药品中使用到的辅料的性质往往是发生变化的，这些变化往往来源于生产工艺的变化。辅料的某种特性的变化会影响到制剂的性能和功能，应充分理解了这些变化对制剂关键质量属性的影响。多种辅料的分析检测技术为评估这些变化提供了方法，应注意积累和总结。此外，辅料的包装、贮藏条件对辅料质量的影响，例如光、氧、湿、热等因素都会促进辅料中过氧化物的形成，聚维酮等辅料使用中需注意包装的合理性和完整性。</p>
 <p>可以预见，随着我国仿制药一致性评价工作的深入开展，人们对辅料关键质量属性的研究和控制将会得到前所未有的重视。</p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><strong>参考文献</strong></h2><p>[1] 白璐,王博,吴疆,任晓文.不同型号甘露醇对吲达帕胺直接压片的影响研究[J].现代药物与临床,2014,29（4）：338-341</p>
-<p>[2] 赵存婕.探讨不同粒度的甘露醇对于直接压片产品的影响[J].黑龙江医药,2014,27(3):559-562</p>
-<p>[3] Dongmei Qiang, Jocelyn A.Gunn, Leon Schultz &amp; Z. Jane Li.Evaluation of the impact of sodium lauryl sulfate source variability on solid oral dosage form development [J]. Drug Development and Industrial Pharmacy, 2010; 36(12): 1486–1496.</p>
-<p>[4] Kelly Zhang, Jackson D.Pellett, Ajit S. Narang, Y. John Wang, Yonghua Taylor Zhang. Reactive impurities in large and small molecule pharmaceutical excipients-A review [J]. Trends in Analytical Chemistry,101 (2018) 34-42.</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a><strong>参考文献</strong></h2><p>[1] 白璐,王博,吴疆,任晓文.不同型号甘露醇对吲达帕胺直接压片的影响研究[J].现代药物与临床,2014,29（4）：338-341<br>[2] 赵存婕.探讨不同粒度的甘露醇对于直接压片产品的影响[J].黑龙江医药,2014,27(3):559-562<br>[3] Dongmei Qiang, Jocelyn A.Gunn, Leon Schultz &amp; Z. Jane Li.Evaluation of the impact of sodium lauryl sulfate source variability on solid oral dosage form development [J]. Drug Development and Industrial Pharmacy, 2010; 36(12): 1486–1496.<br>[4] Kelly Zhang, Jackson D.Pellett, Ajit S. Narang, Y. John Wang, Yonghua Taylor Zhang. Reactive impurities in large and small molecule pharmaceutical excipients-A review [J]. Trends in Analytical Chemistry,101 (2018) 34-42.</p>
 
     </div>
 
@@ -538,6 +559,7 @@
   </div>
 
   
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/npm/ribbon.js@1/dist/ribbon.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
