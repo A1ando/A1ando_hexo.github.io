@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="manifest" href="/images/manifest.json">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.min.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+  <script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误');
+                history.back();
+            }
+        }
+    })();
+  </script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"a1ando.github.io","root":"/","scheme":"Pisces","version":"8.0.0-rc.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="序言全文为转载 新药自己开发应根据不同阶段选择合适的工艺，即“目的性”。如在开发临床早期的制剂，应采用简单的工艺，便于新药能够快速进行临床概念性验证；当处于临床后期及商业生产的制剂，应充分考虑工艺的稳定性、可放大性等因素。固体口服制剂的主要单元操作包括制粒、干燥、粉碎、混合、压片（或罐装）等；其中根据制剂工艺，固体口服片剂常见三大工艺：湿法制粒、干法制粒和粉末直压工艺。下文将对新药固体口服制剂的常">
+<meta property="og:type" content="article">
+<meta property="og:title" content="固体口服制剂开发路径：工艺篇">
+<meta property="og:url" content="http://a1ando.github.io/post/70339cd4.html">
+<meta property="og:site_name" content="艾南岛">
+<meta property="og:description" content="序言全文为转载 新药自己开发应根据不同阶段选择合适的工艺，即“目的性”。如在开发临床早期的制剂，应采用简单的工艺，便于新药能够快速进行临床概念性验证；当处于临床后期及商业生产的制剂，应充分考虑工艺的稳定性、可放大性等因素。固体口服制剂的主要单元操作包括制粒、干燥、粉碎、混合、压片（或罐装）等；其中根据制剂工艺，固体口服片剂常见三大工艺：湿法制粒、干法制粒和粉末直压工艺。下文将对新药固体口服制剂的常">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-21-24.jpg">
+<meta property="og:image" content="c:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-30-36.jpg">
+<meta property="og:image" content="c:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-51-04.jpg">
+<meta property="og:image" content="c:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_22-16-29.jpg">
+<meta property="article:published_time" content="2020-07-15T14:22:47.000Z">
+<meta property="article:modified_time" content="2020-07-15T14:29:31.549Z">
+<meta property="article:author" content="A1ando">
+<meta property="article:tag" content="制剂">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-21-24.jpg">
+
+<link rel="canonical" href="http://a1ando.github.io/post/70339cd4.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>固体口服制剂开发路径：工艺篇 | 艾南岛</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before, .use-motion .logo-line-after {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line toggle-line-first"></span>
+        <span class="toggle-line toggle-line-middle"></span>
+        <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line-before"></i>
+      <h1 class="site-title">艾南岛</h1>
+      <i class="logo-line-after"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">个人随笔</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">9</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序言"><span class="nav-number">1.</span> <span class="nav-text">序言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制粒工艺"><span class="nav-number">2.</span> <span class="nav-text">制粒工艺</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#高剪切湿法制粒"><span class="nav-number">2.1.</span> <span class="nav-text">高剪切湿法制粒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流化床制粒"><span class="nav-number">2.2.</span> <span class="nav-text">流化床制粒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#干法制粒"><span class="nav-number">2.3.</span> <span class="nav-text">干法制粒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#粉末直压"><span class="nav-number">2.4.</span> <span class="nav-text">粉末直压</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#烘干工艺"><span class="nav-number">3.</span> <span class="nav-text">烘干工艺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#粉碎工艺"><span class="nav-number">4.</span> <span class="nav-text">粉碎工艺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压片工艺"><span class="nav-number">5.</span> <span class="nav-text">压片工艺</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制剂工艺的选择"><span class="nav-number">6.</span> <span class="nav-text">制剂工艺的选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制剂工艺的开发目标"><span class="nav-number">7.</span> <span class="nav-text">制剂工艺的开发目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新药制剂开发决策"><span class="nav-number">8.</span> <span class="nav-text">新药制剂开发决策</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="A1ando"
+      src="http://ww1.sinaimg.cn/large/c2c8e24dly1gg5nclzubcj20b40b40t3.jpg">
+  <p class="site-author-name" itemprop="name">A1ando</p>
+  <div class="site-description" itemprop="description">记录个人生活、学习</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/A1ando" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;A1ando" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:741944551@qq.com" title="E-Mail → mailto:741944551@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/1352778" title="Bili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;1352778" rel="noopener" target="_blank"><i class="fa fa-tv fa-fw"></i>Bili</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/ch-ZN" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://www.v2ex.com/" title="https:&#x2F;&#x2F;www.v2ex.com&#x2F;" rel="noopener" target="_blank">V2EX</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+	  
+	  
+    
+    <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+    <div class="widget-wrap">
+        <h3 class="widget-title">Tag Cloud</h3>
+        <div id="myCanvasContainer" class="widget tagcloud">
+            <canvas width="250" height="250" id="resCanvas" style="width=100%">
+                <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NexT/" rel="tag">NexT</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/" rel="tag">Python</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/theme/" rel="tag">theme</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B6%E5%89%82/" rel="tag">制剂</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%88%B6%E5%89%82%E5%85%AC%E5%8F%B8/" rel="tag">制剂公司</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag">多线程</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%88%AC%E8%99%AB/" rel="tag">爬虫</a><span class="tag-list-count">2</span></li></ul>
+            </canvas>
+        </div>
+    </div>
+    
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://a1ando.github.io/post/70339cd4.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="http://ww1.sinaimg.cn/large/c2c8e24dly1gg5nclzubcj20b40b40t3.jpg">
+      <meta itemprop="name" content="A1ando">
+      <meta itemprop="description" content="记录个人生活、学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="艾南岛">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          固体口服制剂开发路径：工艺篇
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-15 22:22:47 / 修改时间：22:29:31" itemprop="dateCreated datePublished" datetime="2020-07-15T22:22:47+08:00">2020-07-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%B6%E5%89%82/" itemprop="url" rel="index"><span itemprop="name">制剂</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><p>全文为<a href="http://www.360doc.com/content/18/0401/16/45217307_742044164.shtml" target="_blank" rel="noopener"><strong>转载</strong></a></p>
+<p>新药自己开发应根据不同阶段选择合适的工艺，即“目的性”。如在开发临床早期的制剂，应采用简单的工艺，便于新药能够快速进行临床概念性验证；当处于临床后期及商业生产的制剂，应充分考虑工艺的稳定性、可放大性等因素。固体口服制剂的主要单元操作包括制粒、干燥、粉碎、混合、压片（或罐装）等；其中根据制剂工艺，固体口服片剂常见三大工艺：湿法制粒、干法制粒和粉末直压工艺。下文将对新药固体口服制剂的常见工艺研究进行介绍。</p>
+<a id="more"></a>
+
+<table>
+<thead>
+<tr>
+<th align="center">湿法制粒</th>
+<th align="center">干法制粒</th>
+<th align="center">粉末直压</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">混合</td>
+<td align="center">混合</td>
+<td align="center">混合</td>
+</tr>
+<tr>
+<td align="center">制粒（湿法）</td>
+<td align="center">制粒（干法）</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">干燥</td>
+<td align="center">/</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">粉碎</td>
+<td align="center">粉碎</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">混合</td>
+<td align="center">混合</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">压片</td>
+<td align="center">压片</td>
+<td align="center">压片</td>
+</tr>
+</tbody></table>
+<h2 id="制粒工艺"><a href="#制粒工艺" class="headerlink" title="制粒工艺"></a>制粒工艺</h2><p>制粒主要目的是使原辅料粉末通过粘附形成较大颗粒（通常0.05-1.0mm)，通过改善颗粒的粒径分布（PSD）、流动性、混合均一性等，便于后续罐装或压片过程。目前已有制粒技术如下图所示，其中最常用的制粒技术：干法制粒（碾压）和湿法制粒（高剪切制粒或流化床制粒）。</p>
+<table>
+<thead>
+<tr>
+<th align="center">项目</th>
+<th align="center">干法制粒</th>
+<th align="center">湿法制粒（高剪切）</th>
+<th align="center">湿法制粒（流化床）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">机理</td>
+<td align="center">通过滚压力将物料压成条状物，然后通过粉碎机将粉碎成小颗粒</td>
+<td align="center">通过向高速转动的物料中加入合适液体粘合剂，将物料沾粘成小湿颗粒，然后干燥</td>
+<td align="center">向处于硫化状态的物料中喷洒粘合剂，将物料沾粘成小湿颗粒，一边制粒一边干燥</td>
+</tr>
+<tr>
+<td align="center">关键工艺参数</td>
+<td align="center">1.预混合均一性<br />2.条状物厚度<br />3.颗粒粒径分布及流动性</td>
+<td align="center">1.制粒终点的建立<br />2.含水量<br />3.颗粒粒径分布及流动性</td>
+<td align="center">1.制粒终点的建立<br />2.含水量<br />3.颗粒粒径分布及流动性</td>
+</tr>
+<tr>
+<td align="center">优势</td>
+<td align="center">1.不引入湿热<br />2.可连续化生产</td>
+<td align="center">1.易放大<br />2.可在锅内完成预混合</td>
+<td align="center">1.制粒干燥同步进行<br />2.颗粒均匀、流动性好、密度低</td>
+</tr>
+<tr>
+<td align="center">缺陷</td>
+<td align="center">若原料药可压性差，可能导致粘附在滚筒上</td>
+<td align="center">过程引入湿热</td>
+<td align="center">同时引入湿热</td>
+</tr>
+</tbody></table>
+<h3 id="高剪切湿法制粒"><a href="#高剪切湿法制粒" class="headerlink" title="高剪切湿法制粒"></a>高剪切湿法制粒</h3><p>高剪切制粒是目前制粒工艺中最常用的方法，与其他制粒技术相比，其工艺易于放大，颗粒易混合均一。为便于粒径生长，高剪切湿法制粒的载药量≤50%。高剪切湿法制粒机一般由锅体、喷嘴、搅拌桨和辅助切碎刀组成，依次完成物料预混合、加液制粒和补充制粒的过程。高剪切湿法制粒的许多工艺参数（如批量、粘合剂加入量、搅拌桨转速、制粒时间等）均会影响制得颗粒的质量。</p>
+<table>
+<thead>
+<tr>
+<th align="center">工艺参数</th>
+<th align="center">建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">批量</td>
+<td align="center">物料体积一般为锅体体积的30%-70%；<br />经验规则：高剪切湿法制粒锅最大批量=锅体积（L）/5，如6L的锅，一般最大批量为1.2kg物料</td>
+</tr>
+<tr>
+<td align="center">液体加入量</td>
+<td align="center">一般干物料的IMC（initial moisture content)为1-5%，湿颗粒的TMC（target moisture content）为20-30%，而高剪切湿法制粒处于密闭体系，水分损失很少，故总液体加入量=Batch Size × （TMC - IMC）/ 100</td>
+</tr>
+<tr>
+<td align="center">加液速度</td>
+<td align="center">雾化压力一定时，不同喷液速度影响雾滴大小，导致颗粒的PSD差异和物料的外观、密度；喷液时间过长，容易导致物料温度加速升温，易导致化学稳定性</td>
+</tr>
+<tr>
+<td align="center">搅拌桨、切碎刀转速</td>
+<td align="center">转速太慢，不能有效混合和制粒；转速太快，导致颗粒磨损，变小</td>
+</tr>
+</tbody></table>
+<h3 id="流化床制粒"><a href="#流化床制粒" class="headerlink" title="流化床制粒"></a>流化床制粒</h3><p>流化床制粒是通过粘合剂溶液喷洒到流化床粉末上生产颗粒的一种方法，其由物料混合、湿法制粒和干燥步骤组成。流化床中颗粒的运动轨迹、粘合剂的加入量和空气干燥能力对流化制粒影响较大。例如，较高的入口温度产生较细的颗粒，较低的温度产生较大较强的颗粒。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>影响</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>进气温度</td>
+<td>空气加热能力：<br />太大：物料干燥太快；<br />太小：流化床物料湿度越来越大，最终塌床</td>
+</tr>
+<tr>
+<td>粘合剂浓度</td>
+<td>粘合剂喷射时的粘度：<br />太大：不容易喷射粘合剂<br />太小：不能有显著的粘性帮助形成颗粒</td>
+</tr>
+<tr>
+<td>雾化压力</td>
+<td>液滴大小：<br />太大：物料易形成大颗粒<br />太小：快速干燥，不易形成大颗粒</td>
+</tr>
+<tr>
+<td>喷液速度</td>
+<td>物料冷却能力：<br />太大：流化床物料湿度越来越大，最终塌床<br />太小：容易形成大量细粉</td>
+</tr>
+</tbody></table>
+<p>流化床制粒过程中，可以通过记录产品和排气温度、颗粒含水量等来监控工艺过程。</p>
+<h3 id="干法制粒"><a href="#干法制粒" class="headerlink" title="干法制粒"></a>干法制粒</h3><p>干法制粒工艺过程中，混合均匀后的物料粉末在高压下压实、打碎、过筛后，形成一定粒径分布的颗粒。较湿法制粒，干法制粒的优势是工艺过程中不涉及水分和热量，适合湿热敏感物料制粒。同时，干法制粒占用空间较小，适合连续化生产。干法制粒不适用于可压性或二次可压性较差的物料；同时由于高压制粒，颗粒密度较高，可能减缓产品的溶出。</p>
+<h3 id="粉末直压"><a href="#粉末直压" class="headerlink" title="粉末直压"></a>粉末直压</h3><p>直接选用流动性、可压性较好辅料进行压片；载药量较宽，可以70-80%载药量，甚至更高；粉末直压适合湿热敏感药物</p>
+<h2 id="烘干工艺"><a href="#烘干工艺" class="headerlink" title="烘干工艺"></a>烘干工艺</h2><p>烘干工艺一般是湿法制粒（高剪切或流化床）后的必要步骤，常见干燥方式有鼓风烘箱真空烘箱和流化床。其中流化床干燥工业应用较多，其通过热的进风空气将湿颗粒分散、流化，湿颗粒悬浮在流化空气中，热空气和湿颗粒之间的接触面积显著增大，能在较短时间内实现干燥物料的目的。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>进风量</td>
+<td>进风量太小，物料流化不起来；进风量太大，物料过度磨损，细粉较多，API可能被空气吹散夹带排除，导致物料API含量降低；</td>
+</tr>
+<tr>
+<td>进风温度</td>
+<td>一般推荐60-70℃；在固定温湿度空气干燥下，物料水分最终将达到平衡含水量（equilibrium moisture content, EMC)；温度越高（或湿度越低），干燥空气的蒸气容量越大，物料越容易干燥。但温度太高，容易造成API化学性质不稳定；温度太低，又会延长干燥时间，对生产效率和产品稳定性均不利</td>
+</tr>
+</tbody></table>
+<h2 id="粉碎工艺"><a href="#粉碎工艺" class="headerlink" title="粉碎工艺"></a>粉碎工艺</h2><p>干颗粒的混合工艺是保证最终药品含量均一性的关键步骤，混合机混合机制通常包括：对流、扩散、剪切。</p>
+<p>混合前通常将助流剂、润滑剂或外部崩解剂加入粉碎好的干颗粒中，最常见的干颗粒混合机为翻滚式混合机，影响其混合效率的关键参数包括：物料批量、混合圈数（混合时间和速度）、加料顺序。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>物料批量</td>
+<td>1.最佳为混合机容量的40-70%<br />过低（＜20%），混合物会过度混合，导致混合均一性较差<br />过高（＞80%），混合效率降低，需要较长的混合时间弥补较高的填充水平，生产效率低</td>
+</tr>
+<tr>
+<td>混合圈数</td>
+<td>混合圈数是物料混合均一性的关键参数，其由混合时间和混合速度决定。<br />混合时间过短，物料容易混合不均；混合时间过长，不同种类粒径的物料可能分层，恶化混合均一性，还容易导致润滑剂的过度润滑。<br />混合速度一般为10-25rpm。在有润滑剂的情况下，一般混合时间取可接受范围的下限，避免过度润滑导致硬度、溶出等降低</td>
+</tr>
+<tr>
+<td>加料顺序</td>
+<td>混合过程通过物料从高浓度扩散到低浓度区达到混合均一性。<br />对于需要外加的崩解剂、助流剂、润滑剂，一般用量较少；为了更快更好的达到混合均一，常采用等比例稀释或部分预混合，其中预混合的混合效率较等比例稀释法高</td>
+</tr>
+<tr>
+<td>物料密度、粒径、形状</td>
+<td>尽量选择粒径较为接近的物料；可以通过粉碎或碾磨的方法降低粒径和改善粒径分布，能够增加物料颗粒的数目，避免由于大颗粒或力度分布不均一导致的产品均一性问题；<br />球形颗粒流动性好，前期容易混合均匀，但后期也容易过度混合；针状等颗粒前期较难混合均匀，但后期也不易混合分层；<br />不同物料密度应尽量接近，物料密度相差太大（≥4倍）容易导致混合分层；密度差异、粒径、性质共同作用，会加速恶化混合均一性问题。</td>
+</tr>
+</tbody></table>
+<p><img data-src="C:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-21-24.jpg" alt="Snipaste_2020-07-15_21-21-24"></p>
+<center>混合料筒不同装载量对混合效率的影响</center>
+
+<p><img data-src="C:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-30-36.jpg" alt="Snipaste_2020-07-15_21-30-36"></p>
+<center>混合的工艺过程</center>
+
+<h2 id="压片工艺"><a href="#压片工艺" class="headerlink" title="压片工艺"></a>压片工艺</h2><p>压片工艺是将混合好的物料通过压片机成型的过程，其是临床给药的一种最终形式。压片过程：物料填充摸具、调整填充重量、压实物料成片状、片剂从模具中分离。压片工艺的关键参数包括：主压力和转速。评价标准常为硬度和脆碎度。</p>
+<table>
+<thead>
+<tr>
+<th>因素</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>结晶态/多态性</td>
+<td>1.辅料结晶度越低，可压性越好，但脆碎度会变差；<br />2.部分API在会高压缩作用下，容易转晶，可能导致溶出变慢</td>
+</tr>
+<tr>
+<td>孔隙率和堆密度</td>
+<td>1.物料孔隙率越高，可压性越好；<br />2.一般干法制粒制得的颗粒堆密度较大，二次可压性可能存在部分问题</td>
+</tr>
+<tr>
+<td>粒径和形状</td>
+<td>1.较球形颗粒，不规则颗粒可压性更好；<br />2.可压性与粒径大小成正比</td>
+</tr>
+<tr>
+<td>压缩力</td>
+<td>1.一般压缩力增加，片剂硬度增加，脆碎度降低；但压缩力太高，可能对溶出产生不利影响，并可能导致片剂内部出现裂纹，造成片剂不合格。<br />2.对于圆形片，片剂硬度数值一般为片径10倍即可</td>
+</tr>
+<tr>
+<td>压片速度</td>
+<td>1.过高旋转速度，物料填充时间减少，容易出现片重差异和含量均一性问题；另外，过快的转速，压片时间缩短，空气容易滞留在片中，导致片剂顶裂等；<br />2.转速过慢，物料长时间处于压片机震动环境，容易导致物料分层，出现片重差异和含量均一性问题；<br />3.压片速度对塑性辅料（MCC）的影响较脆性辅料（乳糖）大，转速越快，塑性辅料压制的片剂硬度越低；<br />4.合适的压片速度兼顾片剂的硬度、脆碎等</td>
+</tr>
+<tr>
+<td>物料含水量</td>
+<td>1.物料含水量过低，压缩过程中颗粒容易破碎产生更多的细粉，导致较差可压性和较高的脆碎度；<br />2.物料含水量过高，物料流动性和可加工性（如粘冲等）均可能存在问题</td>
+</tr>
+</tbody></table>
+<p><img data-src="C:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_21-51-04.jpg" alt=""></p>
+<center>固体口服制剂中涉及物料的相对密度情况</center>
+
+<table>
+<thead>
+<tr>
+<th>缺陷类型</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>裂片（顶裂、腰裂）</td>
+<td>降低压片压力，减少片剂回弹裂片；<br />适当增加粘合剂用量，提高颗粒拉紧实度；<br />适当增加润滑剂用量，减少摩擦</td>
+</tr>
+<tr>
+<td>松片</td>
+<td>增加粘合剂用量，提高颗粒的紧实度；<br />适度提高干颗粒含水量（1-3%），干颗粒含水量太低（＜1%）不易成片；<br />适当增加压片压力</td>
+</tr>
+<tr>
+<td>粘冲</td>
+<td>适当降低干颗粒含水量；<br />提高模具表面光洁度；<br />增加润滑剂；<br />部分原辅料熔点受压力影响而降低、粘冲，可适度降低压片力</td>
+</tr>
+</tbody></table>
+<h2 id="制剂工艺的选择"><a href="#制剂工艺的选择" class="headerlink" title="制剂工艺的选择"></a>制剂工艺的选择</h2><p>制粒过程的选取取决于粉末混合的容易程度，即粉末流动性和混合均匀性。</p>
+<h2 id="制剂工艺的开发目标"><a href="#制剂工艺的开发目标" class="headerlink" title="制剂工艺的开发目标"></a>制剂工艺的开发目标</h2><p>根据产品TPP，需要对制剂工艺制定开发目标，以便达到TPP的要求。以典型的湿法制粒为例：</p>
+<table>
+<thead>
+<tr>
+<th align="center">单元操作</th>
+<th align="center">开发目标</th>
+<th align="center">控制目标</th>
+<th align="center">物料检测</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">制粒</td>
+<td align="center">制备合适大小的颗粒</td>
+<td align="center">API晶型不能受到影响</td>
+<td align="center">XRD、水分</td>
+</tr>
+<tr>
+<td align="center">粉碎</td>
+<td align="center">降低颗粒粒径，改善粒径分布</td>
+<td align="center">避免物料过热</td>
+<td align="center">PSD、松实密度</td>
+</tr>
+<tr>
+<td align="center">混合</td>
+<td align="center">物料混合均一性</td>
+<td align="center">需要避免过度润滑</td>
+<td align="center">PSD、松实密度、混合均一性、含量、流动性</td>
+</tr>
+<tr>
+<td align="center">胶囊罐装</td>
+<td align="center">填充为重量均一的胶囊</td>
+<td align="center">避免物料损失过大</td>
+<td align="center">重量差异、崩解、溶出、含量、含量均一性</td>
+</tr>
+<tr>
+<td align="center">压片</td>
+<td align="center">制备合格的片剂</td>
+<td align="center">最小化压片出现的缺陷</td>
+<td align="center">重量差异、崩解、溶出、含量、含量均一性、硬度、脆碎度</td>
+</tr>
+<tr>
+<td align="center">包衣</td>
+<td align="center">均匀包衣</td>
+<td align="center">控制包衣出现的外观问题</td>
+<td align="center">外观、溶出</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h2 id="新药制剂开发决策"><a href="#新药制剂开发决策" class="headerlink" title="新药制剂开发决策"></a>新药制剂开发决策</h2><p>新药制剂的开发具有其特殊性，新化合物第一次开发成制剂，其很多性质还不甚了解，为了更有效率进行制剂开发，需要遵循一些基本原则和管理工具，如TPP等。在综合考虑了制剂处方工艺开发的基本原则，下表给出新药制剂开发的决策流程图：</p>
+<p><img data-src="C:/Users/wanga/Desktop/%E5%88%B6%E5%89%82%E5%AD%A6%E4%B9%A0/md%E5%9B%BE%E7%89%87/Snipaste_2020-07-15_22-16-29.jpg" alt=""></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>A1ando
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://a1ando.github.io/post/70339cd4.html" title="固体口服制剂开发路径：工艺篇">http://a1ando.github.io/post/70339cd4.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除声明转载处，均为独立创作，采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/ch-ZN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%88%B6%E5%89%82/" rel="tag"><i class="fa fa-tag"></i> 制剂</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/88ebc3e5.html" rel="prev" title="爬取前程无忧（51jobs）">
+      <i class="fa fa-chevron-left"></i> 爬取前程无忧（51jobs）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/7ab4679b.html" rel="next" title="制剂工艺研究中小试的重要性">
+      制剂工艺研究中小试的重要性 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">A1ando</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">27k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">25 分钟</span>
+</div>
+
+<!--添加运行时间-->
+<span id="sitetime"></span>Life sucks, We still gotta move on
+<script language=javascript>
+	function siteTime(){
+		window.setTimeout("siteTime()", 1000);
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		/* 
+		Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+		year - 作为date对象的年份，为4位年份值
+		month - 0-11之间的整数，做为date对象的月份
+		day - 1-31之间的整数，做为date对象的天数
+		hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+		minutes - 0-59之间的整数，做为date对象的分钟数
+		seconds - 0-59之间的整数，做为date对象的秒数
+		microseconds - 0-999之间的整数，做为date对象的毫秒数
+        */
+		var t1 = Date.UTC(2020,06,20,17,00,00); //北京时间2018-2-13 00:00:00
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		document.getElementById("sitetime").innerHTML=" 本站已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+	}
+	siteTime();
+</script>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
